@@ -23,3 +23,9 @@
 FROM cupenya/docker-jenkins-default-slave
 MAINTAINER Elmar Weber <elmar(.)weber(@)cupenya(.)com>
 
+# add ivy2 cache
+USER root
+COPY ivy2-cache /home/jenkins/.ivy2/cache
+RUN chown jenkins:jenkins -R /home/jenkins/.ivy2
+# reset to parent user
+USER jenkins
