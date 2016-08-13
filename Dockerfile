@@ -20,7 +20,7 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 #  THE SOFTWARE.
 
-FROM cupenya/docker-jenkins-default-slave
+FROM cupenya/docker-jenkins-slave-services
 MAINTAINER Elmar Weber <elmar(.)weber(@)cupenya(.)com>
 
 # add ivy2 cache
