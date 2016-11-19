@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ivy-module version="2.0" xmlns:m="http://ant.apache.org/ivy/maven" xmlns:e="http://ant.apache.org/ivy/extra">
+	<info organisation="de.lmu.ifi.dbs.elki"
+		module="elki-project"
+		revision="0.7.1"
+		status="release"
+		publication="20160211102948"
+	>
+		<license name="GNU Affero General Public License (AGPL) version 3.0" url="http://www.gnu.org/licenses/agpl-3.0.txt" />
+		<description homepage="http://elki.dbs.ifi.lmu.de/">
+		ELKI is an open source (AGPLv3) data mining software written in Java. The focus of ELKI is research in algorithms, with an emphasis on unsupervised methods in cluster analysis and outlier detection.
+In order to achieve high performance and scalability, ELKI offers many data index structures such as the R*-tree that can provide major performance gains.
+ELKI is designed to be easy to extend for researchers and students in this domain, and welcomes contributions in particular of new methods.
+ELKI aims at providing a large collection of highly parameterizable algorithms, in order to allow easy and fair evaluation and benchmarking of algorithms.
+		</description>
+		<m:dependency.management__junit__junit__version>[4.8,)</m:dependency.management__junit__junit__version>
+		<m:properties__excludeTests>**/HeapPerformanceTest*</m:properties__excludeTests>
+		<m:dependency.management__org.apache.xmlgraphics__batik-rasterizer__version>[1.7,1.9)</m:dependency.management__org.apache.xmlgraphics__batik-rasterizer__version>
+		<m:dependency.management__org.apache.xmlgraphics__xmlgraphics-commons__version>[2,3)</m:dependency.management__org.apache.xmlgraphics__xmlgraphics-commons__version>
+		<m:properties__year>2015</m:properties__year>
+		<m:properties__project.build.sourceEncoding>UTF-8</m:properties__project.build.sourceEncoding>
+		<m:properties__skipTests>false</m:properties__skipTests>
+		<m:properties__elki.projdir>${basedir}</m:properties__elki.projdir>
+		<m:dependency.management__net.sf.trove4j__trove4j__version>[3.0.3,)</m:dependency.management__net.sf.trove4j__trove4j__version>
+		<m:dependency.management__org.apache.xmlgraphics__batik-ext__version>[1.7,1.9)</m:dependency.management__org.apache.xmlgraphics__batik-ext__version>
+		<m:dependency.management__org.apache.xmlgraphics__batik-codec__version>[1.7,1.9)</m:dependency.management__org.apache.xmlgraphics__batik-codec__version>
+		<e:sbtTransformHash>2814dd1a21789a98e914aa11b3dc956614c89652</e:sbtTransformHash>
+		<m:dependency.management__org.apache.xmlgraphics__batik-swing__version>[1.7,1.9)</m:dependency.management__org.apache.xmlgraphics__batik-swing__version>
+		<m:maven.plugins>null__maven-compiler-plugin__null|null__maven-surefire-plugin__null|null__maven-jar-plugin__null|null__maven-dependency-plugin__null|null__maven-source-plugin__null|null__maven-resources-plugin__null|null__maven-javadoc-plugin__null</m:maven.plugins>
+		<m:dependency.management__junit__junit__scope>test</m:dependency.management__junit__junit__scope>
+	</info>
+	<configurations>
+		<conf name="default" visibility="public" description="runtime dependencies and master artifact can be used with this conf" extends="runtime,master"/>
+		<conf name="master" visibility="public" description="contains only the artifact published by this module itself, with no transitive dependencies"/>
+		<conf name="compile" visibility="public" description="this is the default scope, used if none is specified. Compile dependencies are available in all classpaths."/>
+		<conf name="provided" visibility="public" description="this is much like compile, but indicates you expect the JDK or a container to provide it. It is only available on the compilation classpath, and is not transitive."/>
+		<conf name="runtime" visibility="public" description="this scope indicates that the dependency is not required for compilation, but is for execution. It is in the runtime and test classpaths, but not the compile classpath." extends="compile"/>
+		<conf name="test" visibility="private" description="this scope indicates that the dependency is not required for normal use of the application, and is only available for the test compilation and execution phases." extends="runtime"/>
+		<conf name="system" visibility="public" description="this scope is similar to provided except that you have to provide the JAR which contains it explicitly. The artifact is always available and is not looked up in a repository."/>
+		<conf name="sources" visibility="public" description="this configuration contains the source artifact of this module, if any."/>
+		<conf name="javadoc" visibility="public" description="this configuration contains the javadoc artifact of this module, if any."/>
+		<conf name="optional" visibility="public" description="contains all optional dependencies"/>
+	</configurations>
+	<publications>
+	</publications>
+</ivy-module>
