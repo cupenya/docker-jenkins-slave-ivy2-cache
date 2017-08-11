@@ -32,15 +32,15 @@ USER root
 # COPY ivy2-cache /home/jenkins/.ivy2/cache
 # RUN chown jenkins:jenkins -R /home/jenkins/.ivy2
 
-RUN mkdir /tmp/ivy2-init && \
-    cd /tmp/ivy2-init && \
-    wget https://github.com/cupenya/docker-jenkins-slave-ivy2-cache/archive/master.zip && \
-    unzip master.zip && \ 
-    mkdir /home/jenkins/.ivy2 && \
-    cp -r docker-jenkins-slave-ivy2-cache-master/ivy2-cache /home/jenkins/.ivy2/cache && \
-    chown jenkins:jenkins -R /home/jenkins/.ivy2 && \
-    cd /tmp && \
-    rm -Rf ivy2-init
+#RUN mkdir /tmp/ivy2-init && \
+#    cd /tmp/ivy2-init && \
+#    wget https://github.com/cupenya/docker-jenkins-slave-ivy2-cache/archive/master.zip && \
+#    unzip master.zip && \ 
+#    mkdir /home/jenkins/.ivy2 && \
+#    cp -r docker-jenkins-slave-ivy2-cache-master/ivy2-cache /home/jenkins/.ivy2/cache && \
+#    chown jenkins:jenkins -R /home/jenkins/.ivy2 && \
+#    cd /tmp && \
+#    rm -Rf ivy2-init
 
 # reset to parent user
 USER jenkins
